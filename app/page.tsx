@@ -1,26 +1,30 @@
 import { Navbar } from '@/components/navbar'
 import { Hero } from '@/components/hero'
 import { Challenge } from '@/components/challenge'
-import { Solution } from '@/components/solution'
+import { CorporateSolutions } from '@/components/corporate-solutions'
+import { OurSolution } from '@/components/our-solution'
 import { Services } from '@/components/services'
-import { Technology } from '@/components/technology'
-import { Impact } from '@/components/impact'
-import { Methodology } from '@/components/methodology'
+import { PatientPlatform } from '@/components/patient-platform'
+import { About } from '@/components/about'
+import { Competencies } from '@/components/competencies'
+import { OperationsBase } from '@/components/operations-base'
 import { Contact } from '@/components/contact'
 import { Footer } from '@/components/footer'
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Navbar />
       <main>
         <Hero />
         <Challenge />
-        <Solution />
+        <CorporateSolutions />
+        <OurSolution />
         <Services />
-        <Technology />
-        <Impact />
-        <Methodology />
+        <PatientPlatform />
+        <About />
+        <Competencies />
+        <OperationsBase />
         <Contact />
       </main>
       <Footer />

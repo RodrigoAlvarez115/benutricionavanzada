@@ -2,31 +2,32 @@
 // BE Nutrición Avanzada — configuración del sitio
 // ============================================================
 
-// Enlace externo del botón "Acceso".
-// Reemplazar por la URL real cuando esté disponible:
-//   export const ACCESS_URL = "https://URL-REAL";
-export const ACCESS_URL = '#PENDIENTE_URL_ACCESO'
+// Portal externo de pacientes (Acceso pacientes / Solicitar turno / Coordinar cita).
+// La marca visible sigue siendo exclusivamente BE Nutrición Avanzada / BENA.
+export const PORTAL_URL = 'https://nutreando.com/be-nutricion'
+
+// Aliases retrocompatibles (mismo destino).
+export const ACCESS_URL = PORTAL_URL
+export const NUTREANDO_URL = PORTAL_URL
 
 export const NAV_ITEMS = [
   { label: 'Inicio', href: '#inicio' },
-  { label: 'El desafío', href: '#desafio' },
-  { label: 'Nuestra solución', href: '#solucion' },
+  { label: 'El desafío operacional', href: '#desafio' },
+  { label: 'Soluciones corporativas', href: '#soluciones-corporativas' },
+  { label: 'Nuestra solución', href: '#nuestra-solucion' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Tecnología', href: '#tecnologia' },
-  { label: 'Impacto', href: '#impacto' },
-  { label: 'Metodología', href: '#metodologia' },
+  { label: 'Plataforma pacientes', href: '#plataforma-pacientes' },
+  { label: 'Quiénes somos', href: '#quienes-somos' },
+  { label: 'Base operativa', href: '#base-operativa' },
   { label: 'Contacto', href: '#contacto' },
 ] as const
 
 export const CONTACT = {
-  base: 'Salta, Argentina (Presencial en Salta, Jujuy, Catamarca)',
+  base: 'Salta, Argentina.',
+  coverage:
+    'Cobertura regional (Salta, Jujuy, Catamarca, San Juan y resto del país)',
   email: 'benutricion.a@gmail.com',
-  phones: ['+54 9 387 5217749', '+54 9 387 5818508'],
 } as const
 
-// Plataforma Nutreando: acceso de pacientes/empresas.
-// Reemplazar por la URL real cuando esté disponible:
-//   export const NUTREANDO_URL = "https://URL-REAL";
-export const NUTREANDO_URL = '#PENDIENTE_URL_NUTREANDO'
-
-export const COVERAGE = 'Salta (Puna) · Jujuy · Catamarca · Remoto Nacional'
+export const COVERAGE =
+  'Salta, Jujuy, Catamarca, San Juan y resto del país'

@@ -26,8 +26,8 @@ export function Challenge() {
     <section id="desafio" className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          eyebrow="El desafío"
-          title="El Desafío Operacional en la Puna Salteña"
+          eyebrow="Entornos exigentes"
+          title="El desafío operacional"
           subtitle="En los yacimientos de litio y minería en la Puna salteña, las jornadas extremas a más de 3.800 msnm, los turnos rotativos (14x14 / 7x7) y las bajas temperaturas demandan un rendimiento biológico superior."
         />
 
