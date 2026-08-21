@@ -1,11 +1,12 @@
-import Image from 'next/image'
 import { cn } from '@/lib/utils'
 
 /**
- * Logo oficial de BE Nutrición Avanzada.
- * El archivo es un JPG con fondo blanco, por lo que en superficies oscuras
- * (variant="white") se coloca sobre un "chip" blanco redondeado para que el
- * fondo del logo se integre de forma intencional y el logo permanezca legible.
+ * PLACEHOLDER del logo de BE Nutrición Avanzada.
+ *
+ * Es un marcador de posición claramente identificable, construido para
+ * respetar la identidad visual del dossier (azul marino + celeste).
+ * Reemplazar por el logo OFICIAL cuando esté disponible: lo ideal es
+ * sustituir este componente por un <Image src="/images/logo-oficial.svg" />.
  */
 type LogoProps = {
   variant?: 'navy' | 'white'
@@ -13,26 +14,48 @@ type LogoProps = {
   priority?: boolean
 }
 
-export function Logo({ variant = 'navy', className, priority = false }: LogoProps) {
+export function Logo({ variant = 'navy', className }: LogoProps) {
   const isWhite = variant === 'white'
 
   return (
     <span
-      className={cn(
-        'inline-flex items-center',
-        isWhite && 'rounded-xl bg-white p-2 shadow-sm',
-        className,
-      )}
+      className={cn('flex items-center gap-2.5', className)}
       aria-label="BE Nutrición Avanzada"
+      data-placeholder-logo="true"
     >
-      <Image
-        src="/images/logo-bena.jpg"
-        alt="BE Nutrición Avanzada"
-        width={200}
-        height={200}
-        priority={priority}
-        className={cn('h-11 w-auto object-contain', isWhite && 'h-12')}
-      />
+      {/* Monograma */}
+      <span
+        className={cn(
+          'relative flex size-10 items-center justify-center rounded-lg font-heading text-lg font-bold leading-none',
+          isWhite ? 'bg-white/10 text-white' : 'bg-navy text-white',
+        )}
+      >
+        BE
+        <span
+          aria-hidden="true"
+          className="absolute bottom-1.5 right-1.5 size-1.5 rounded-full bg-celeste"
+        />
+      </span>
+
+      {/* Wordmark */}
+      <span className="flex flex-col leading-none">
+        <span
+          className={cn(
+            'font-heading text-[0.95rem] font-bold uppercase tracking-tight',
+            isWhite ? 'text-white' : 'text-navy',
+          )}
+        >
+          BE Nutrición
+        </span>
+        <span
+          className={cn(
+            'text-[0.6rem] font-medium uppercase tracking-[0.28em]',
+            isWhite ? 'text-celeste' : 'text-tech',
+          )}
+        >
+          Avanzada
+        </span>
+      </span>
     </span>
   )
 }

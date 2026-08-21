@@ -22,11 +22,7 @@ export const CONTACT = {
   base: 'Salta, Argentina (Presencial en Salta, Jujuy, Catamarca)',
   email: 'benutricion.a@gmail.com',
   phones: ['+54 9 387 5217749', '+54 9 387 5818508'],
+  website: 'www.benutricion.com',
 } as const
-
-// Plataforma Nutreando: acceso de pacientes/empresas.
-// Reemplazar por la URL real cuando esté disponible:
-//   export const NUTREANDO_URL = "https://URL-REAL";
-export const NUTREANDO_URL = '#PENDIENTE_URL_NUTREANDO'
 
 export const COVERAGE = 'Salta (Puna) · Jujuy · Catamarca · Remoto Nacional'

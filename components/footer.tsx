@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Logo } from '@/components/logo'
-import { ACCESS_URL, CONTACT, NAV_ITEMS, NUTREANDO_URL } from '@/lib/site-config'
+import { ACCESS_URL, CONTACT, NAV_ITEMS } from '@/lib/site-config'
 
 export function Footer() {
   return (
@@ -70,16 +70,7 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href={NUTREANDO_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-100/80 transition-colors hover:text-white"
-                >
-                  Plataforma Nutreando
-                </a>
-              </li>
+              <li className="text-blue-100/80">{CONTACT.website}</li>
             </ul>
           </div>
         </div>
