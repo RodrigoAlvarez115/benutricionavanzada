@@ -16,7 +16,6 @@ export const NAV_ITEMS = [
   { label: 'Soluciones corporativas', href: '#soluciones-corporativas' },
   { label: 'Nuestra solución', href: '#nuestra-solucion' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Plataforma pacientes', href: '#plataforma-pacientes' },
   { label: 'Quiénes somos', href: '#quienes-somos' },
   { label: 'Base operativa', href: '#base-operativa' },
   { label: 'Contacto', href: '#contacto' },

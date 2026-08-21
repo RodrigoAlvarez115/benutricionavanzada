@@ -16,10 +16,10 @@ type LogoProps = {
 }
 
 const SIZES: Record<NonNullable<LogoProps['size']>, string> = {
-  sm: 'h-10',
-  md: 'h-14',
-  lg: 'h-16',
-  xl: 'h-20',
+  sm: 'h-12',
+  md: 'h-16',
+  lg: 'h-20',
+  xl: 'h-24',
 }
 
 export function Logo({
@@ -45,7 +45,11 @@ export function Logo({
         width={320}
         height={320}
         priority={priority}
-        className={cn('w-auto object-contain', SIZES[size])}
+        className={cn(
+          'w-auto object-contain',
+          !isWhite && 'mix-blend-multiply',
+          SIZES[size],
+        )}
       />
     </span>
   )

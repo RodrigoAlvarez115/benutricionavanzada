@@ -1,5 +1,7 @@
 import Image from 'next/image'
+import { ScanLine, HeartPulse, UtensilsCrossed, Brain } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
+import { Watermark } from '@/components/watermark'
 
 const PROFILES = [
   {
@@ -28,10 +30,37 @@ const PROFILES = [
   },
 ]
 
+const COMPETENCIES = [
+  {
+    icon: ScanLine,
+    title: 'Diagnóstico metabólico no invasivo',
+    text: 'Mediciones segmentarias con InBody 270: masa grasa, masa muscular, agua corporal y grasa visceral.',
+  },
+  {
+    icon: HeartPulse,
+    title: 'Tratamiento cardiometabólico',
+    text: 'Planes dietoterapéuticos adaptados a perfiles bioquímicos, turnos rotativos y altitud.',
+  },
+  {
+    icon: UtensilsCrossed,
+    title: 'Auditoría nutricional del catering',
+    text: 'Optimización de minutas en campamento para opciones cardiosaludables y funcionales.',
+  },
+  {
+    icon: Brain,
+    title: 'Educación y cambio de hábitos',
+    text: 'Abordaje psico-emocional enfocado en la adherencia sostenible a largo plazo.',
+  },
+]
+
 export function About() {
   return (
-    <section id="quienes-somos" className="bg-background py-20 md:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section
+      id="quienes-somos"
+      className="relative overflow-hidden bg-background py-20 md:py-28"
+    >
+      <Watermark tone="light" size={520} className="-left-28 top-24 w-[380px]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Presentation + photo */}
         <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-16">
           <Reveal className="relative order-2 lg:order-1">
@@ -44,10 +73,6 @@ export function About() {
                 className="object-cover"
               />
             </div>
-            <div
-              className="absolute -right-4 -top-4 -z-10 h-40 w-40 rounded-3xl bg-tech/10"
-              aria-hidden="true"
-            />
           </Reveal>
 
           <Reveal className="order-1 lg:order-2">
@@ -76,13 +101,9 @@ export function About() {
         </div>
 
         {/* Directors */}
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
+        <div className="mt-16 grid gap-x-12 gap-y-10 lg:grid-cols-2">
           {PROFILES.map(({ name, license, role, points }, i) => (
-            <Reveal
-              key={name}
-              delay={i * 120}
-              className="flex flex-col rounded-2xl border border-border bg-card p-7 shadow-sm md:p-8"
-            >
+            <Reveal key={name} delay={i * 120} className="flex flex-col">
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h3 className="text-xl font-bold text-navy">{name}</h3>
                 <span className="rounded-full bg-secondary px-2.5 py-0.5 text-xs font-semibold text-tech">
@@ -108,6 +129,28 @@ export function About() {
               </ul>
             </Reveal>
           ))}
+        </div>
+
+        {/* Team competencies */}
+        <div className="mt-16 border-t border-border pt-12">
+          <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-tech">
+            Competencias del equipo
+          </h3>
+          <div className="mt-8 grid gap-x-12 gap-y-8 sm:grid-cols-2">
+            {COMPETENCIES.map(({ icon: Icon, title, text }, i) => (
+              <Reveal key={title} delay={(i % 2) * 90} className="flex gap-4">
+                <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-navy text-white">
+                  <Icon className="size-5" aria-hidden="true" />
+                </span>
+                <div>
+                  <h4 className="font-semibold text-navy">{title}</h4>
+                  <p className="mt-1.5 text-pretty text-sm leading-relaxed text-muted-foreground">
+                    {text}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </section>

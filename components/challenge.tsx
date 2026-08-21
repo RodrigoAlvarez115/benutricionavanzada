@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { AlertTriangle, HeartPulse, Droplets, TrendingDown } from 'lucide-react'
+import { AlertTriangle, HeartPulse, Droplets } from 'lucide-react'
 import { SectionHeader } from '@/components/section-header'
 import { Reveal } from '@/components/reveal'
 
@@ -67,24 +67,6 @@ export function Challenge() {
             />
           </Reveal>
         </div>
-
-        {/* Highlight block */}
-        <Reveal
-          delay={80}
-          className="mt-10 overflow-hidden rounded-2xl bg-navy"
-        >
-          <div className="flex flex-col gap-5 p-8 md:flex-row md:items-center md:gap-8 md:p-10">
-            <div className="flex size-14 shrink-0 items-center justify-center rounded-xl bg-tech/20 text-celeste">
-              <TrendingDown className="size-7" aria-hidden="true" />
-            </div>
-            <p className="text-balance text-xl font-semibold leading-snug text-white md:text-2xl">
-              Un colaborador con fatiga biológica en altura reduce su
-              rendimiento operacional hasta un{' '}
-              <span className="text-celeste">66%</span> e incrementa el riesgo
-              de accidentes.
-            </p>
-          </div>
-        </Reveal>
       </div>
     </section>
   )

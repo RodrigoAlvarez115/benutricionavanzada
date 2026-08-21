@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Menu, X, ArrowUpRight, CalendarCheck } from 'lucide-react'
+import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Logo } from '@/components/logo'
 import { PORTAL_URL, NAV_ITEMS } from '@/lib/site-config'
@@ -36,15 +36,15 @@ export function Navbar() {
     >
       <nav
         aria-label="Navegación principal"
-        className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8"
+        className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 md:h-28 lg:px-8"
       >
         <a
           href="#inicio"
           className="flex items-center rounded-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-tech"
           aria-label="BE Nutrición Avanzada — Inicio"
         >
-          <Logo priority size="lg" className="sm:hidden" />
-          <Logo priority size="xl" className="hidden sm:inline-flex" />
+          <Logo priority size="lg" className="md:hidden" />
+          <Logo priority size="xl" className="hidden md:inline-flex" />
         </a>
 
         {/* Desktop nav */}
@@ -60,25 +60,16 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Desktop CTAs */}
-        <div className="hidden items-center gap-2 lg:flex">
+        {/* Desktop CTA */}
+        <div className="hidden items-center lg:flex">
           <a
             href={PORTAL_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg border border-navy/25 px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-tech hover:text-tech"
+            className="inline-flex items-center gap-2 rounded-lg bg-tech px-5 py-3 text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-navy"
           >
             Acceso pacientes
             <ArrowUpRight className="size-4" aria-hidden="true" />
-          </a>
-          <a
-            href={PORTAL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-tech px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy"
-          >
-            <CalendarCheck className="size-4" aria-hidden="true" />
-            Solicitar turno
           </a>
         </div>
 
@@ -115,26 +106,16 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-5 flex flex-col gap-3">
+          <div className="mt-5">
             <a
               href={PORTAL_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-navy/25 px-4 py-3.5 text-base font-semibold text-navy transition-colors hover:border-tech hover:text-tech"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-tech px-4 py-3.5 text-base font-semibold uppercase tracking-wide text-white transition-colors hover:bg-navy"
             >
               Acceso pacientes
               <ArrowUpRight className="size-4" aria-hidden="true" />
-            </a>
-            <a
-              href={PORTAL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-tech px-4 py-3.5 text-base font-semibold text-white transition-colors hover:bg-navy"
-            >
-              <CalendarCheck className="size-4" aria-hidden="true" />
-              Solicitar turno
             </a>
           </div>
         </div>
