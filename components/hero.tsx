@@ -1,6 +1,5 @@
 import Image from 'next/image'
-import { MapPin } from 'lucide-react'
-import { COVERAGE } from '@/lib/site-config'
+import { Watermark } from '@/components/watermark'
 
 export function Hero() {
   return (
@@ -8,9 +7,15 @@ export function Hero() {
       id="inicio"
       className="relative overflow-hidden border-b border-border bg-background"
     >
+      <Watermark
+        tone="light"
+        size={560}
+        className="-right-28 -top-16 w-[420px]"
+      />
+
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 md:py-24 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8 lg:py-28">
         {/* Copy */}
-        <div>
+        <div className="relative">
           <div className="mb-6 inline-flex items-center gap-3">
             <span className="h-px w-10 bg-tech" aria-hidden="true" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-tech">
@@ -19,14 +24,12 @@ export function Hero() {
           </div>
 
           <h1 className="text-balance text-4xl font-bold leading-[1.05] text-navy sm:text-5xl lg:text-6xl">
-            Salud real.
-            <span className="block text-tech">Rendimiento sostenible.</span>
+            BE Nutrición Avanzada
           </h1>
 
           <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Evolución nutricional para entornos exigentes. Acompañamos a
-            personas y organizaciones con intervención metabólica, diagnóstico
-            de precisión y programas de salud laboral.
+            Evolución nutricional para entornos exigentes: salud real,
+            rendimiento sostenible.
           </p>
         </div>
 
@@ -42,19 +45,6 @@ export function Hero() {
               className="object-cover"
             />
           </div>
-        </div>
-      </div>
-
-      {/* Coverage strip */}
-      <div className="border-t border-border bg-navy">
-        <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-4 sm:px-6 lg:px-8">
-          <MapPin className="size-4 shrink-0 text-celeste" aria-hidden="true" />
-          <p className="text-sm font-medium text-blue-100">
-            <span className="font-semibold text-white">
-              Cobertura regional:
-            </span>{' '}
-            {COVERAGE}
-          </p>
         </div>
       </div>
     </section>

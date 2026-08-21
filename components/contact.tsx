@@ -145,6 +145,9 @@ export function Contact() {
                     <dd className="mt-1 leading-relaxed text-navy">
                       {CONTACT.base}
                     </dd>
+                    <dd className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                      {CONTACT.coverage}
+                    </dd>
                   </div>
                 </div>
               </dl>
